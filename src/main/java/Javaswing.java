@@ -12,5 +12,6 @@ public class Javaswing {
         frame.add(button);
         frame.add(button2);
         frame.setVisible(true);
+        int test = 2;
     }
 }
