@@ -20,4 +20,4 @@ public class Javaswing {
         myFrame.setVisible(true);
         myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
-}
+} 
