@@ -1,4 +1,5 @@
 
+import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import javax.swing.*;
@@ -9,13 +10,11 @@ public class Player {
     int health = 10;
     int damage = 1;
     int jumpH = 1;
-    int speed = 30;
-    int x = 200;
+    int speed = 1;
+    int x = 100;
     
-    public void draw(Graphics g) {
-        Graphics2D g2D = (Graphics2D) g;
+    public Player() {
         
-        g2D.drawOval(x, 200, 30, 30);
     }
     
     public void movement() {
@@ -27,6 +26,11 @@ public class Player {
          }
         
     }
+    
+    public int getX() {
+        return x;
+    }
+
     public void moveLeft(boolean left) {
         this.left = left;
     }
