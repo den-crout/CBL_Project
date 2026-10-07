@@ -38,6 +38,9 @@ public class Levels extends JPanel implements KeyListener {
         this.setVisible(true);
 
         Timer timer = new Timer(10, e -> {
+        
+        Timer timer = new Timer(30, e -> {
+            player.collision();
             player.movement();
             repaint();
         });
@@ -67,10 +70,16 @@ public class Levels extends JPanel implements KeyListener {
 
     public void paintBlock(int x, int y) {
 
+        super.setSize(420, 420);
+        
+        g.setColor(Color.white);
+        
+        g.drawRect(player.getX(), player.getY(), 30, 30);
     }
 
     @Override
     public void keyTyped(KeyEvent e) {
+        
         //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
@@ -81,6 +90,9 @@ public class Levels extends JPanel implements KeyListener {
         }
         if (e.getKeyCode() == KeyEvent.VK_D) {
             player.moveRight(true);
+        }
+        if (e.getKeyCode() == KeyEvent.VK_SPACE) {
+            player.doJump(true);
         }
         //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
