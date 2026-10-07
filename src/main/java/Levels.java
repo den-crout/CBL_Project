@@ -25,6 +25,7 @@ public class Levels extends JPanel implements KeyListener {
         this.setVisible(true);
         
         Timer timer = new Timer(30, e -> {
+            player.collision();
             player.movement();
             repaint();
         });
