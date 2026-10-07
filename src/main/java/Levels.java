@@ -25,7 +25,7 @@ public class Levels extends JPanel implements KeyListener {
 
     public Levels() {
 
-        this.setBackground(Color.green);
+        this.setBackground(Color.black);
         this.setBounds(0, 0, 200, 200);
 
         player = new Player();
@@ -36,8 +36,6 @@ public class Levels extends JPanel implements KeyListener {
         player.movement();
 
         this.setVisible(true);
-
-        Timer timer = new Timer(10, e -> {
         
         Timer timer = new Timer(30, e -> {
             player.collision();
@@ -49,13 +47,13 @@ public class Levels extends JPanel implements KeyListener {
 
     }
 
-    @Override   //override paint method in JFrame so we can use players draw
+    @Override   
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
 
         g.setColor(Color.red);
 
-        g.drawRect(player.getX(), 180, 30, 30);
+        g.drawRect(player.getX(), player.getY(), 30, 30);
         for (int i = 0; i < 8; i++) {
             for (int j = 0; j < 20; j++) {
                 if (grid[i][j] == 1) {
@@ -67,14 +65,12 @@ public class Levels extends JPanel implements KeyListener {
         }
         // g.drawRect()
     }
-
+   
     public void paintBlock(int x, int y) {
 
         super.setSize(420, 420);
         
-        g.setColor(Color.white);
         
-        g.drawRect(player.getX(), player.getY(), 30, 30);
     }
 
     @Override
