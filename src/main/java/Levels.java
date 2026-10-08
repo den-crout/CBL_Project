@@ -12,6 +12,7 @@ public class Levels extends JPanel implements KeyListener {
     private static Player player;
     private static Level_1 level1;
     private static Block block;
+    private static Spike spike;
 
     int[][] grid = {
         {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
@@ -57,12 +58,17 @@ public class Levels extends JPanel implements KeyListener {
         g.setColor(Color.red);
 
         g.drawRect(player.getX(), player.getY(), 30, 30);
-        for (int i = 0; i < 8; i++) {
-            for (int j = 0; j < 20; j++) {
+        for (int i = 0; i < 8; i++) {                       //loop y axis
+            for (int j = 0; j < 20; j++) {                  //loop x axis
                 if (grid[i][j] == 1) {
                     g.setColor(Color.GRAY);
                     block = new Block(j, i);
                     g.drawRect(block.getX(), block.getY(), 30, 30);
+                }
+                if (grid[i][j] == 2) {
+                    g.setColor(Color.WHITE);
+                    spike = new Spike(j,i);
+                    g.drawPolygon(spike.getX(), spike.getY(), 3);
                 }
             }
         }
