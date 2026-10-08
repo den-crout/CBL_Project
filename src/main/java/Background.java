@@ -10,9 +10,12 @@ public class Background extends JFrame {
     public Background() {
         this.setTitle("Jump King");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setSize(420,420);
+        
+        this.setSize(800,600);
+        this.setLocationRelativeTo(null);
         level = new Levels();
         this.add(level);
+        pack();
         this.setVisible(true);
         
     }

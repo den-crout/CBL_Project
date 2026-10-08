@@ -13,7 +13,7 @@ public class Player {
     int damage = 1;
     int speed = 3;
     int jumpH = -15;
-    int x = 200;
+    int x = 195;
     int y = 150;
     int yVelocity = 1;
     int speedg = 1;
@@ -36,11 +36,13 @@ public class Player {
         
         if (collision() == true && yVelocity > 0) {
             yVelocity = 0;
-            y = (300 - 30);
+            y = (210 - 30);
         }
+        
+        
 
         if (jump) {
-            if (y == 300 - 30) {
+            if (y == 210 - 30) {
             yVelocity = jumpH;
             }
             jump = false;
@@ -48,7 +50,7 @@ public class Player {
     }
 
     public boolean collision() {
-        if (y >= (300 - 30) && (x > 50 && x < 300)) {
+        if ((y >= (210 - 30) && (x > 0 && x < 570)) ) {
             return true;
         }
 
