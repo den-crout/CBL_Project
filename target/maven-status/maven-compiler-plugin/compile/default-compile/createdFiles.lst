@@ -1,9 +1,8 @@
 Spike.class
+GameOverRestart.class
 JumpKing.class
 Background.class
 Level_1.class
-GameOverScreen.class
 Block.class
 Player.class
 Levels.class
-NewJFrame.class
