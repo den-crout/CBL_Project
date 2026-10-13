@@ -6,3 +6,4 @@ Block.class
 GameStart.class
 Player.class
 Levels.class
+Flag.class

@@ -15,8 +15,8 @@ public class Levels extends JPanel implements KeyListener {
     private static Background background;
     private Timer timer;
     public static Level_1 level1;
+    private static Flag flag;
 
-    
     public Levels(Background background) {
 
         this.setBackground(Color.black);
@@ -28,8 +28,8 @@ public class Levels extends JPanel implements KeyListener {
 
         player.movement();
 
-        level1  = new Level_1();
-        
+        level1 = new Level_1();
+
         timer = new Timer(30, e -> {
 
             player.movement();
@@ -41,7 +41,7 @@ public class Levels extends JPanel implements KeyListener {
                 timer.stop();
                 background.showRestart();
             }
-          
+
         });
 
         timer.start();
@@ -67,6 +67,13 @@ public class Levels extends JPanel implements KeyListener {
                     spike = new Spike(j, i);
                     g.drawPolygon(spike.getX(), spike.getY(), 3);
                 }
+                if (level1.getCoordinate(i, j) == 3) {
+                    g.setColor(Color.LIGHT_GRAY);
+                    flag = new Flag(j,i);
+                    g.drawRect(flag.getX(), flag.getY(), 1, 30);
+                    g.setColor(Color.RED);
+                    g.drawRect(flag.getX()+1, flag.getY(), 29, 10);
+                }
             }
         }
         // g.drawRect()
@@ -77,7 +84,7 @@ public class Levels extends JPanel implements KeyListener {
         super.setSize(420, 420);
 
     }
-    
+
     public void startT() {
         timer.start();
     }
