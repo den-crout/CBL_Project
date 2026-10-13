@@ -23,6 +23,8 @@ public class Levels extends JPanel implements KeyListener {
 
         player = new Player();
         this.background = background;
+        
+        
         setFocusable(true); //read the keyboard
         addKeyListener(this);  //use keyboard methods for THIS
 
