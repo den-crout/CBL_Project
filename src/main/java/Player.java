@@ -61,6 +61,18 @@ public class Player {
         if (right) {
             x += speed;
         }
+        if (y <= 0) {
+            yVelocity = 0;
+            y = 0;
+        }
+        if (x >= 753 + 28) {
+            
+            x = 753 + 28;
+        }
+        if (x <= 1) {
+            
+            x = 1;
+        }
 
         yVelocity += 1;
         y += yVelocity;
@@ -117,13 +129,19 @@ public class Player {
                         x = 390;
                         y = 150;
                     }
-                    
+
                 }
-                
+
             }
         }
-    }
+        if (y > 600) {
+            health -= 1;
+            x = 390;
+            y = 150;
+        }
+        
 
+    }
 
     public int getX() {
         return x;
@@ -145,3 +163,6 @@ public class Player {
         this.jump = jump;
     }
 }
+
+
+
