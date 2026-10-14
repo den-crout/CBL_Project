@@ -43,17 +43,18 @@ public class Background extends JFrame {
         
         
         level1 = new Levels(this, level_1.getGrid());    //creating 3 different levels based on 3 grids;
+        container.add(level1, "game1");   // add game screens
         level2 = new Levels(this, level_2.getGrid());
+        container.add(level2, "game2");
         level3 = new Levels(this, level_3.getGrid());
+        container.add(level3, "game3");
         
         restart = new Restart(this, level1); //create panels with this background;
         start = new GameStart(this);
         select = new SelectLevel(this);
         
         
-        container.add(level1, "game1");    //add game screens
-        container.add(level2, "game2");
-        container.add(level3, "game3");
+        
         
         container.add(start, "start");       //add menu panels
         container.add(restart, "restart");

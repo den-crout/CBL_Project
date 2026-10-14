@@ -72,6 +72,7 @@ public int selected;
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        
         select.showGame1();
         selected = 1;
         

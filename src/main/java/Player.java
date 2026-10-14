@@ -20,9 +20,9 @@ public class Player {
     int playerH = 28;
     int previousY;
     int previousX;
-    
+
     int[][] grid;
-    
+
     public Player(int[][] grid) {
         this.grid = grid;
     }
@@ -47,11 +47,11 @@ public class Player {
             y = 0;
         }
         if (x >= 753 + 28) {
-            
+
             x = 753 + 28;
         }
         if (x <= 1) {
-            
+
             x = 1;
         }
 
@@ -110,19 +110,45 @@ public class Player {
                         x = 390;
                         y = 150;
                     }
+                } else if (grid[r][c] == 3) {
+                    //top collision
+                    if (((previousY + playerH) <= (30 * r) && (y + playerH) >= (30 * r)) && (x > 30 * c - 29 && x < 30 * c + 29) && yVelocity > 0) {
+                        health -= 1;
+                        x = 390;
+                        y = 150;
+                    }
 
+                    if ((previousY >= (30 * r + 30) && y <= (30 * r + 30)) && (x > 30 * c - 29 && x < 30 * c + 29) && yVelocity < 0) {
+                        health -= 1;
+                        x = 390;
+                        y = 150;
+                    }
+                    //left and right collision
+                    if (((previousX + playerH) <= (30 * c) && ((x + playerH) >= 30 * c)) && ((y + playerH) > (30 * r) && y < (30 * r + 30))) {
+                        health -= 1;
+                        x = 390;
+                        y = 150;
+                    }
+                    if (((previousX) >= (30 * c + 30) && ((x) <= 30 * c + 30)) && ((y + playerH) > (30 * r) && y < (30 * r + 30))) {
+                        health -= 1;
+                        x = 390;
+                        y = 150;
+                    }
                 }
 
             }
+
         }
-        if (y > 600) {
+    
+
+    if (y > 600) {
             health -= 1;
             x = 390;
             y = 150;
         }
         
-
     }
+    
 
     public int getX() {
         return x;
@@ -144,6 +170,3 @@ public class Player {
         this.jump = jump;
     }
 }
-
-
-

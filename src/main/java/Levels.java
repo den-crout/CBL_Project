@@ -9,7 +9,7 @@ import javax.swing.*;
 
 public class Levels extends JPanel implements KeyListener {
 
-    public static Player player;
+    public Player player;
     private static Block block;
     private static Spike spike;
     private static Background background;
@@ -22,7 +22,7 @@ public class Levels extends JPanel implements KeyListener {
     public Levels(Background background, int[][] grid) {
 
         this.setBackground(Color.black);
-
+       
         player = new Player(grid);
         this.background = background;
         this.grid = grid;
