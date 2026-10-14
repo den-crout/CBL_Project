@@ -14,23 +14,22 @@ public class Levels extends JPanel implements KeyListener {
     private static Spike spike;
     private static Background background;
     private Timer timer;
-    public static Level_1 level1;
-
     
-    public Levels(Background background) {
+    
+    private int[][] grid;
+    
+    public Levels(Background background, int[][] grid) {
 
         this.setBackground(Color.black);
 
-        player = new Player();
+        player = new Player(grid);
         this.background = background;
-        
+        this.grid = grid;
         
         setFocusable(true); //read the keyboard
         addKeyListener(this);  //use keyboard methods for THIS
 
         player.movement();
-
-        level1  = new Level_1();
         
         timer = new Timer(30, e -> {
 
@@ -41,14 +40,15 @@ public class Levels extends JPanel implements KeyListener {
                 player.moveRight(false);
                 player.doJump(false);
                 timer.stop();
+                
                 background.showRestart();
             }
           
         });
 
-        timer.start();
-
     }
+    
+    
 
     @Override
     public void paintComponent(Graphics g) {
@@ -59,12 +59,12 @@ public class Levels extends JPanel implements KeyListener {
         g.drawRect(player.getX(), player.getY(), 28, 28);
         for (int i = 0; i < 19; i++) {                       //loop y axis
             for (int j = 0; j < 27; j++) {                  //loop x axis
-                if (level1.getCoordinate(i, j) == 1) {
+                if (grid[i][j] == 1) {
                     g.setColor(Color.GRAY);
                     block = new Block(j, i);
                     g.drawRect(block.getX(), block.getY(), 30, 30);
                 }
-                if (level1.getCoordinate(i, j) == 2) {
+                if (grid[i][j] == 2) {
                     g.setColor(Color.WHITE);
                     spike = new Spike(j, i);
                     g.drawPolygon(spike.getX(), spike.getY(), 3);
@@ -80,8 +80,14 @@ public class Levels extends JPanel implements KeyListener {
 
     }
     
+    
+    
     public void startT() {
         timer.start();
+    }
+    
+    public void endT() {
+        timer.stop();
     }
 
     @Override
