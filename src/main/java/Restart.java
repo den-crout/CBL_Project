@@ -8,8 +8,9 @@
  * @author denysk
  */
 public class Restart extends javax.swing.JPanel {
-private Background restart;
+public Background restart;
 private Levels level;
+public int selected;
     /**
      * Creates new form Restart
      */
@@ -66,8 +67,16 @@ private Levels level;
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         level.player.health = 3;
-        level.startT();
-        restart.showGame();
+        if (restart.select.selected == 1) {
+            restart.showGame1();
+        }
+        if (restart.select.selected == 2) {
+            restart.showGame2();
+        }
+        if (restart.select.selected == 3) {
+            restart.showGame3();
+        }
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
 

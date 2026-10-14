@@ -20,10 +20,11 @@ public class Player {
     int playerH = 28;
     int previousY;
     int previousX;
-    public Level_1 level1;
     
-    public Player() {
-        level1 = new Level_1();
+    int[][] grid;
+    
+    public Player(int[][] grid) {
+        this.grid = grid;
     }
 
     public void movement() {
@@ -57,11 +58,11 @@ public class Player {
         yVelocity += 1;
         y += yVelocity;
 
-        for (int r = 0; r < level1.getGridLengthY(); r++) {
-            for (int c = 0; c < level1.getGridLengthX(); c++) {
-                if (level1.getCoordinate(r, c) == 1) {
+        for (int r = 0; r < grid.length; r++) {
+            for (int c = 0; c < grid[r].length; c++) {
+                if (grid[r][c] == 1) {
                     //top collision 
-                    if (((previousY + playerH) <= (30 * r) && (y + playerH) >= (30 * r)) && (x > 30 * c - 29 && x < 30 * c + 29) && yVelocity > 0) {
+                    if (((previousY + playerH) <= (30 * r) && (y + playerH) >= (30 * r)) && (x > 30 * c - 38 && x < 30 * c + 38) && yVelocity > 0) {
 
                         yVelocity = 0;
                         y = 30 * r - 29;
@@ -85,7 +86,7 @@ public class Player {
                     if (((previousX) >= (30 * c + 30) && ((x) <= 30 * c + 30)) && ((y + playerH) > (30 * r) && y < (30 * r + 30))) {
                         x = 30 * c + 31;
                     }
-                } else if (level1.getCoordinate(r, c) == 2) {
+                } else if (grid[r][c] == 2) {
                     //top collision
                     if (((previousY + playerH) <= (30 * r) && (y + playerH) >= (30 * r)) && (x > 30 * c - 29 && x < 30 * c + 29) && yVelocity > 0) {
                         health -= 1;
