@@ -14,6 +14,7 @@ public class Levels extends JPanel implements KeyListener {
     private static Spike spike;
     private static Background background;
     private Timer timer;
+    private Flag flag;
     
     
     private int[][] grid;
@@ -69,7 +70,7 @@ public class Levels extends JPanel implements KeyListener {
                     spike = new Spike(j, i);
                     g.drawPolygon(spike.getX(), spike.getY(), 3);
                 }
-                if (level1.getCoordinate(i, j) == 3) {
+                if (grid[i][j] == 3) {
                     g.setColor(Color.LIGHT_GRAY);
                     flag = new Flag(j,i);
                     g.drawRect(flag.getX(), flag.getY(), 1, 30);
