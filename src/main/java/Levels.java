@@ -43,7 +43,7 @@ public class Levels extends JPanel implements KeyListener {
                 
                 background.showRestart();
             }
-          
+
         });
 
     }
@@ -68,6 +68,13 @@ public class Levels extends JPanel implements KeyListener {
                     g.setColor(Color.WHITE);
                     spike = new Spike(j, i);
                     g.drawPolygon(spike.getX(), spike.getY(), 3);
+                }
+                if (level1.getCoordinate(i, j) == 3) {
+                    g.setColor(Color.LIGHT_GRAY);
+                    flag = new Flag(j,i);
+                    g.drawRect(flag.getX(), flag.getY(), 1, 30);
+                    g.setColor(Color.RED);
+                    g.drawRect(flag.getX()+1, flag.getY(), 29, 10);
                 }
             }
         }
