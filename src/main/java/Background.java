@@ -8,20 +8,21 @@ import java.awt.event.KeyListener;
 import javax.swing.*;
 
 public class Background extends JFrame {
-    private static Levels level1;
-    private static Levels level2;
-    private static Levels level3;
+    public Levels level1;
+    public Levels level2;
+    public Levels level3;
     
-    private static Level_1 level_1;
-    private static Level_2 level_2;
-    private static Level_3 level_3;
+    public Level_1 level_1;
+    public Level_2 level_2;
+    public Level_3 level_3;
     
     private CardLayout cardLayout;
     private JPanel container;
     
-    private static GameStart start;
-    private static Restart restart;
-    public static SelectLevel select;
+    private GameStart start;
+    private Restart restart;
+    public SelectLevel select;
+    public EndGame end;
     
     public int o;
     
@@ -46,19 +47,19 @@ public class Background extends JFrame {
         container.add(level1, "game1");   // add game screens
         level2 = new Levels(this, level_2.getGrid());
         container.add(level2, "game2");
-        level3 = new Levels(this, level_3.getGrid());
+        level3 = new Levels(this, level_3.getGrid());   
         container.add(level3, "game3");
         
         restart = new Restart(this, level1); //create panels with this background;
         start = new GameStart(this);
         select = new SelectLevel(this);
-        
-        
+        end = new EndGame(this);
         
         
         container.add(start, "start");       //add menu panels
         container.add(restart, "restart");
         container.add(select, "select");
+        container.add(end, "end");
         
         this.add(container);              //add container with screens to this frame
         this.setContentPane(container);   //use container as main content area for frame
@@ -69,6 +70,9 @@ public class Background extends JFrame {
         this.setVisible(true);
         
         
+    }
+    public void showStart() {
+        cardLayout.show(container, "start");
     }
     public void showGame1() {
         cardLayout.show(container, "game1");
@@ -91,6 +95,9 @@ public class Background extends JFrame {
     }
     public void showRestart() {
         cardLayout.show(container, "restart"); 
+    }
+    public void showEnd() {
+        cardLayout.show(container, "end");
     }
     
 }
