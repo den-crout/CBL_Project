@@ -16,12 +16,15 @@ public class Levels extends JPanel implements KeyListener {
     private Timer timer;
     private Flag flag;
     
+    
 
     private int[][] grid;
 
     public Levels(Background background, int[][] grid) {
 
-        this.setBackground(Color.black);
+        this.setBackground(new Color(20, 45, 35));
+        
+        
 
         player = new Player(grid);
         this.background = background;
@@ -32,10 +35,29 @@ public class Levels extends JPanel implements KeyListener {
 
         player.movement();
 
-        timer = new Timer(30, e -> {
+        timer = new Timer(30, e -> { 
 
             player.movement();
             repaint();
+            
+            if (player.health == 1) {
+                background.label1.setText("Health: 1");
+                background.label2.setText("Health: 1");
+                background.label3.setText("Health: 1");
+            
+            }
+            if (player.health == 2) {
+                background.label1.setText("Health: 2");
+                background.label2.setText("Health: 2");
+                background.label3.setText("Health: 2");
+            
+            }
+            if (player.health == 3) {
+                background.label1.setText("Health: 3");
+                background.label2.setText("Health: 3");
+                background.label3.setText("Health: 3");
+            }
+            
             if (player.health == 0) {
                 player.moveLeft(false);
                 player.moveRight(false);
@@ -86,10 +108,10 @@ public class Levels extends JPanel implements KeyListener {
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
 
-        g.setColor(Color.red);
+        g.setColor(Color.white);
 
         g.drawRect(player.getX(), player.getY(), 28, 28);
-        g.setColor(Color.white);
+        g.setColor(new Color(23, 37, 84));
         g.fillRect(player.getX(), player.getY(), 28, 28);
         for (int i = 0; i < 19; i++) {                       //loop y axis
             for (int j = 0; j < 27; j++) {                  //loop x axis

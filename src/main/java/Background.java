@@ -1,6 +1,7 @@
 import java.awt.BorderLayout;
 import java.awt.CardLayout;
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.event.KeyEvent;
@@ -24,6 +25,12 @@ public class Background extends JFrame {
     public SelectLevel select;
     public EndGame end;
     
+    public JLabel label1;
+    public JLabel label2;
+    public JLabel label3;
+    
+    int hp;
+    
     public int o;
     
     public Background() {
@@ -44,10 +51,28 @@ public class Background extends JFrame {
         
         
         level1 = new Levels(this, level_1.getGrid());    //creating 3 different levels based on 3 grids;
+        label1 = new JLabel("Health: 3" );
+        label1.setFont(new Font("Arial", Font.BOLD, 22));
+        label1.setForeground(Color.white);
+        level1.add(label1);
+        
+        
         container.add(level1, "game1");   // add game screens
+        
         level2 = new Levels(this, level_2.getGrid());
+        label2 = new JLabel("Health: 3" );
+        label2.setFont(new Font("Arial", Font.BOLD, 22));
+        label1.setForeground(Color.white);
+        level2.add(label2);
+        
         container.add(level2, "game2");
+        
         level3 = new Levels(this, level_3.getGrid());   
+        label3 = new JLabel("Health: 3" );
+        label3.setFont(new Font("Arial", Font.BOLD, 22));
+        label1.setForeground(Color.white);
+        level3.add(label3);
+        
         container.add(level3, "game3");
         
         restart = new Restart(this, level1); //create panels with this background;

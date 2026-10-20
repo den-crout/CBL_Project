@@ -93,6 +93,7 @@ public class Player {
                     //top collision
                     if (((previousY + playerH) <= (30 * r) && (y + playerH) >= (30 * r)) && (x > 30 * c - 29 && x < 30 * c + 29) && yVelocity > 0) {
                         health -= 1;
+                        
                         x = 390;
                         y = 501;
                         return;
@@ -178,5 +179,9 @@ public class Player {
 
     public void doJump(boolean jump) {
         this.jump = jump;
+    }
+    
+    public int getHP() {
+        return health;
     }
 }
