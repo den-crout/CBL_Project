@@ -38,7 +38,7 @@ public class Enemy {
             this.startSpeed = 2;
         } else {
             this.speed = -2;
-            this.startSpeed = 2;
+            this.startSpeed = -2;
         }
         this.grid = grid;
         this.player = player;

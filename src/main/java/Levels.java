@@ -20,7 +20,8 @@ public class Levels extends JPanel implements KeyListener {
     private Enemy enemy;
 
     private int[][] grid;
-    static List<Enemy> allEnemies = new ArrayList<>();
+    
+    public List<Enemy> allEnemies = new ArrayList<>();
 
     public Levels(Background background, int[][] grid) {
 
@@ -49,8 +50,10 @@ public class Levels extends JPanel implements KeyListener {
             for (Enemy enemy : allEnemies) {
                 enemy.checkHit();
                 enemy.movement();
+                
             }
             repaint();
+            
             
             if (player.health == 1) {
                 background.label1.setText("Health: 1");
