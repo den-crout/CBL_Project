@@ -1,9 +1,9 @@
 Spike.class
 JumpKing.class
-Restart.class
 Level_1.class
-GameStart.class
+Restart.class
 Block.class
+GameStart.class
 Player.class
 Level_2.class
 Level_3.class
@@ -11,3 +11,4 @@ SelectLevel.class
 Background.class
 Levels.class
 Flag.class
+Enemy.class
