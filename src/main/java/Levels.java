@@ -20,7 +20,7 @@ public class Levels extends JPanel implements KeyListener {
     private Enemy enemy;
 
     private int[][] grid;
-    
+
     public List<Enemy> allEnemies = new ArrayList<>();
 
     public Levels(Background background, int[][] grid) {
@@ -50,29 +50,28 @@ public class Levels extends JPanel implements KeyListener {
             for (Enemy enemy : allEnemies) {
                 enemy.checkHit();
                 enemy.movement();
-                
+
             }
             repaint();
-            
-            
+
             if (player.health == 1) {
                 background.label1.setText("Health: 1");
                 background.label2.setText("Health: 1");
                 background.label3.setText("Health: 1");
-            
+
             }
             if (player.health == 2) {
                 background.label1.setText("Health: 2");
                 background.label2.setText("Health: 2");
                 background.label3.setText("Health: 2");
-            
+
             }
             if (player.health == 3) {
                 background.label1.setText("Health: 3");
                 background.label2.setText("Health: 3");
                 background.label3.setText("Health: 3");
             }
-            
+
             if (player.health == 0) {
                 player.moveLeft(false);
                 player.moveRight(false);
@@ -80,7 +79,7 @@ public class Levels extends JPanel implements KeyListener {
                 timer.stop();
 
                 background.showRestart();
-            
+
             }
             if (background.select.selected == 1 && player.completed == true) {
                 background.select.selected = 2;
@@ -101,11 +100,11 @@ public class Levels extends JPanel implements KeyListener {
                 timer.stop();
             }
             if (background.select.selected == 3 && player.completed == true) {
-                
+
                 background.level1.player.health = 3;
                 background.level2.player.health = 3;
                 background.level3.player.health = 3;
-                
+
                 background.select.selected = 0;
                 player.completed = false;
                 player.moveLeft(false);
@@ -128,7 +127,7 @@ public class Levels extends JPanel implements KeyListener {
         g.drawRect(player.getX(), player.getY(), 28, 28);
         g.setColor(Color.red);
         g.fillRect(player.getX(), player.getY(), 28, 28);
-        
+
         g.setColor(Color.BLUE);
         for (Enemy enemy : allEnemies) {
             g.drawOval(enemy.getX(), enemy.getY(), 28, 28);
@@ -156,7 +155,7 @@ public class Levels extends JPanel implements KeyListener {
                     g.setColor(Color.RED);
                     g.drawRect(flag.getX() + 1, flag.getY(), 29, 10);
 
-                } 
+                }
             }
         }
     }

@@ -8,8 +8,9 @@
  * @author denysk
  */
 public class SelectLevel extends javax.swing.JPanel {
-private Background select;
-public int selected;
+
+    private Background select;
+    public int selected;
 
     /**
      * Creates new form SelectLevel
@@ -72,24 +73,24 @@ public int selected;
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        
+
         select.showGame1();
         selected = 1;
-        
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         select.showGame2();
         selected = 2;
-        
+
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
         select.showGame3();
         selected = 3;
-        
+
     }//GEN-LAST:event_jButton3ActionPerformed
 
 

@@ -18,12 +18,12 @@ public class Spike {
     }
 
     public int[] getX() {
-        int[] output = {this.x+1, this.x + 15, this.x + 29};
+        int[] output = {this.x + 1, this.x + 15, this.x + 29};
         return output;
     }
-    
+
     public int[] getY() {
-        int[] output = {this.y+29, this.y+1, this.y+29};
+        int[] output = {this.y + 29, this.y + 1, this.y + 29};
         return output;
     }
 }

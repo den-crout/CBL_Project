@@ -8,9 +8,11 @@
  * @author denysk
  */
 public class Restart extends javax.swing.JPanel {
-public Background restart;
-private Levels level;
-public int selected;
+
+    public Background restart;
+    private Levels level;
+    public int selected;
+
     /**
      * Creates new form Restart
      */
@@ -18,10 +20,8 @@ public int selected;
         initComponents();
         this.restart = restart;
         this.level = level;
-        
+
     }
-    
-    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -66,7 +66,7 @@ public int selected;
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        
+
         if (restart.select.selected == 1) {
             restart.level1.player.health = 3;
             restart.showGame1();
@@ -79,7 +79,7 @@ public int selected;
             restart.level3.player.health = 3;
             restart.showGame3();
         }
-        
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
 

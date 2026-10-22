@@ -11,10 +11,10 @@ public class Block {
     }
 
     public int getX() {
-        return this.x*30;
+        return this.x * 30;
     }
 
     public int getY() {
-        return this.y*30;
+        return this.y * 30;
     }
 }

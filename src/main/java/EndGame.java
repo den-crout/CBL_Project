@@ -8,6 +8,7 @@
  * @author denysk
  */
 public class EndGame extends javax.swing.JPanel {
+
     public Background end;
 
     /**

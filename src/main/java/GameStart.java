@@ -7,13 +7,14 @@ import javax.swing.BoxLayout;
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-
 /**
  *
  * @author denysk
  */
 public class GameStart extends javax.swing.JPanel {
-private Background start;
+
+    private Background start;
+
     /**
      * Creates new form GameStart
      */
