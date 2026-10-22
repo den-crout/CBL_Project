@@ -65,7 +65,7 @@ public class Player {
             for (int c = 0; c < grid[r].length; c++) {
                 if (grid[r][c] == 1) {
                     //top collision 
-                    if (((previousY + playerH) <= (30 * r) && (y + playerH) >= (30 * r)) && (x > 30 * c - 38 && x < 30 * c + 38) && yVelocity > 0) {
+                    if (((previousY + playerH) <= (30 * r) && (y + playerH) >= (30 * r)) && (x > 30 * c - 29 && x < 30 * c + 29) && yVelocity > 0) {
 
                         yVelocity = 0;
                         y = 30 * r - 29;
@@ -92,11 +92,7 @@ public class Player {
                 } else if (grid[r][c] == 2) {
                     //top collision
                     if (((previousY + playerH) <= (30 * r) && (y + playerH) >= (30 * r)) && (x > 30 * c - 29 && x < 30 * c + 29) && yVelocity > 0) {
-                        health -= 1;
-                        
-                        x = 390;
-                        y = 501;
-                        return;
+                        getHit();
                     }
 
                     if ((previousY >= (30 * r + 30) && y <= (30 * r + 30)) && (x > 30 * c - 29 && x < 30 * c + 29) && yVelocity < 0) {
@@ -180,8 +176,10 @@ public class Player {
     public void doJump(boolean jump) {
         this.jump = jump;
     }
-    
-    public int getHP() {
-        return health;
+
+    public void getHit() {
+        health -= 1;
+        x = 390;
+        y = 150;
     }
 }
