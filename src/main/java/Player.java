@@ -12,13 +12,11 @@ public class Player {
     boolean right;
     boolean jump;
     public int health = 3;
-    int damage = 1;
     int speed = 5;
     int jumpH = -15;
     int x = 390;
     int y = 501;
     int yVelocity = 1;
-    int speedg = 1;
     int playerH = 28;
     int previousY;
     int previousX;
@@ -93,26 +91,21 @@ public class Player {
                     //top collision
                     if (((previousY + playerH) <= (30 * r) && (y + playerH) >= (30 * r)) && (x > 30 * c - 29 && x < 30 * c + 29) && yVelocity > 0) {
                         getHit();
+                        return;
                     }
 
                     if ((previousY >= (30 * r + 30) && y <= (30 * r + 30)) && (x > 30 * c - 29 && x < 30 * c + 29) && yVelocity < 0) {
-                        health -= 1;
-                        x = 390;
-                        y = 501;
+                        getHit();
                         return;
 
                     }
                     //left and right collision
                     if (((previousX + playerH) <= (30 * c) && ((x + playerH) >= 30 * c)) && ((y + playerH) > (30 * r) && y < (30 * r + 30))) {
-                        health -= 1;
-                        x = 390;
-                        y = 501;
+                        getHit();
                         return;
                     }
                     if (((previousX) >= (30 * c + 30) && ((x) <= 30 * c + 30)) && ((y + playerH) > (30 * r) && y < (30 * r + 30))) {
-                        health -= 1;
-                        x = 390;
-                        y = 501;
+                        getHit();
                         return;
                     }
                 } else if (grid[r][c] == 3) {
@@ -150,9 +143,7 @@ public class Player {
         }
 
         if (y > 600) {
-            health -= 1;
-            x = 390;
-            y = 501;
+            getHit();
         }
 
     }
@@ -180,6 +171,7 @@ public class Player {
     public void getHit() {
         health -= 1;
         x = 390;
-        y = 150;
+        y = 501;
+        
     }
 }

@@ -62,7 +62,7 @@ public class Background extends JFrame {
         level2 = new Levels(this, level_2.getGrid());
         label2 = new JLabel("Health: 3" );
         label2.setFont(new Font("Arial", Font.BOLD, 22));
-        label1.setForeground(Color.white);
+        label2.setForeground(Color.white);
         level2.add(label2);
         
         container.add(level2, "game2");
@@ -70,7 +70,7 @@ public class Background extends JFrame {
         level3 = new Levels(this, level_3.getGrid());   
         label3 = new JLabel("Health: 3" );
         label3.setFont(new Font("Arial", Font.BOLD, 22));
-        label1.setForeground(Color.white);
+        label3.setForeground(Color.white);
         level3.add(label3);
         
         container.add(level3, "game3");

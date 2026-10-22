@@ -24,7 +24,7 @@ public class Levels extends JPanel implements KeyListener {
 
     public Levels(Background background, int[][] grid) {
 
-        this.setBackground(Color.black);
+        this.setBackground(new Color(20, 45, 35));
 
         player = new Player(grid);
         this.background = background;
@@ -123,10 +123,12 @@ public class Levels extends JPanel implements KeyListener {
         g.setColor(Color.white);
 
         g.drawRect(player.getX(), player.getY(), 28, 28);
+        g.setColor(Color.red);
+        g.fillRect(player.getX(), player.getY(), 28, 28);
         
         g.setColor(Color.BLUE);
         for (Enemy enemy : allEnemies) {
-            g.drawOval(enemy.getX(), enemy.getY(), 30, 30);
+            g.drawOval(enemy.getX(), enemy.getY(), 28, 28);
         }
 
         for (int i = 0; i < 19; i++) {                       //loop y axis
