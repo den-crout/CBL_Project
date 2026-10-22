@@ -66,14 +66,17 @@ public int selected;
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        level.player.health = 3;
+        
         if (restart.select.selected == 1) {
+            restart.level1.player.health = 3;
             restart.showGame1();
         }
         if (restart.select.selected == 2) {
+            restart.level2.player.health = 3;
             restart.showGame2();
         }
         if (restart.select.selected == 3) {
+            restart.level3.player.health = 3;
             restart.showGame3();
         }
         

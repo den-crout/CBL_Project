@@ -9,6 +9,7 @@ Level_2.class
 Level_3.class
 SelectLevel.class
 Background.class
+EndGame.class
 Levels.class
 Flag.class
 Enemy.class
